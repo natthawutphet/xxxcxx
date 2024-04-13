@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react'
 import { getData } from './data';
 import Link from 'next/link';
@@ -6,7 +6,6 @@ export default async function page( { params }) {
   const id = params.id
   const data = await getData(id)
 
-console.log(data)
   return (
    <>
    
