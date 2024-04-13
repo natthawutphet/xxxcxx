@@ -6,41 +6,39 @@ export default async function page( { params }) {
   const id = params.id
   const data = await getData(id)
 
-
+console.log(data)
   return (
    <>
-     <div className='container'>
-      <Link href='/vdo' className='btn  mx-3' >ย้อนกลับ</Link>
-      <div className="text-center">  
-      <div className="card mb-3">
-
-      {data.rows.map(row => (
-        <div key={row.id}>
-           <h2>{row.title}</h2>
-          <iframe
-          width='1040'
-          height='500'
-           className='vdo'
-            src={`https://www.youtube.com/embed/${row.youtube}`}
-            title={row.title}
+   
+          <div className="container">
+          <Link className='btn btn-info mt-3' href='/vdo'>Vdo</Link>
+          </div>
+         <div className="container text-center mt-5" >
+         
+         <div className="card mb-3 mt-5">
+          <h2>{data[0].title}</h2>
+             <iframe
+              width='100%'
+              height='250'
+              className="xvdo"
+            size='cover'
+            src={`https://www.youtube.com/embed/${data[0].youtube}`}
+            title={data[0].title}
             frameBorder="0"
-            allow={row.title}
+            allow={data[0].title}
             allowFullScreen
           ></iframe>
-          <p>{row.time}</p>
 
 
-          <h3 className='card-title'>{row.headline}</h3>
-          <p className='card-text'>{row.content}</p>
-         
-         
-
-
+  <div className="card-body">
+  <h3>{data[0].headline}</h3>
+    <p className="card-text">{data[0].content}</p>
+   
+  </div>
 </div>
-       
-      ))}
-    </div>
-    </div></div>
+         
+
+         </div>
    </>
   )
 }

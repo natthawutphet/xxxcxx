@@ -11,7 +11,7 @@ export default async function Page() {
      <div className="container">
 
       <Link href='/' className="btn btn-info h3" ><b>Home</b></Link>
-     <div className="row row-cols-1 row-cols-md-2 g-4">
+     <div className="row row-cols-1 row-cols-md-2 g-3">
      {data.map(ads => (
       <div key={ads.id}>
          <div className="col">
@@ -19,9 +19,10 @@ export default async function Page() {
       {ads.title}
       <div className="card-body">
 
-      <iframe
+      <iframe 
+                className="vdo"
               width='100%'
-              height='250'
+              height={280}
             size='cover'
             src={`https://www.youtube.com/embed/${ads.youtube}`}
             title={ads.title}
@@ -34,7 +35,7 @@ export default async function Page() {
       
      
      
-      <p className="card-text">{ads.content}</p>
+ 
       
       {ads.time}
 

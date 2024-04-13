@@ -1,12 +1,20 @@
-iframe {
-    width: cover;
-   
+.card-body{
+padding:10px;
 }
-
-iframe .vdo {
+.vdo {
   width: 1040;
   height: 750;
 }
+
+.xvdo {
+  width:1040px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+
+
+
 
 @media screen and (max-width: 480px) {
     iframe {
